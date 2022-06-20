@@ -1,0 +1,7 @@
+{
+  "name": "Chant-O-Jeunesse",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue"
+}

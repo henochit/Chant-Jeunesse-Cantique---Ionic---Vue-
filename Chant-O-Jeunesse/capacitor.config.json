@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "Chant-O-Jeunesse",
+	"webDir": "dist",
+	"bundledWebRuntime": false
+}
