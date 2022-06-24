@@ -5,6 +5,7 @@
         <ion-searchbar
           show-cancel-button="focus"
           placeholder="Recherche de cantique"
+          @ionChange="filter"
         ></ion-searchbar>
         <ion-list>
           <ion-item href="#" :key="lyric.id" v-for="lyric in lyrics">
@@ -20,7 +21,7 @@
 import { IonContent, IonPage, IonSearchbar } from "@ionic/vue";
 import { defineComponent } from "vue";
 import { onMounted } from "vue";
-import { lyrics } from "../store/lyrics";
+import { filterLyrics } from "../store/lyrics";
 
 export default defineComponent({
   name: "HomePage",
@@ -30,14 +31,19 @@ export default defineComponent({
     IonSearchbar,
   },
   setup() {
-    let lyricsFiltered = lyrics;
+    let lyricsFiltered = filterLyrics(null);
 
     onMounted(() => {
       console.log("mounted in the composition api!");
     });
 
+    function filter(input:any){
+      lyricsFiltered = filterLyrics(input)
+    }
+
     return {
       lyrics: lyricsFiltered,
+      filter,
     };
   },
 });

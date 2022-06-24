@@ -1,3 +1,14 @@
+export const filterLyrics = function (input: any) {
+  let word = "";
+  word = input && input.detail ? input.detail.value : "";
+
+  if (!word) return lyrics;
+
+  return lyrics.filter((item) => {
+    return item.title.includes(word);
+  });
+};
+
 export const lyrics = [
   {
     id: 1,
